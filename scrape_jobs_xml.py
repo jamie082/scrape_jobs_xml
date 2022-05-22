@@ -17,6 +17,7 @@ other=[]
 
 def start_program():
     for counter in soup.find_all('form', class_='search-form'):
+
         for n, tag in enumerate(counter.find_all('ul', class_='rows')):
             description = [x for x in tag.find_all('li')]
             # output job
@@ -25,11 +26,11 @@ def start_program():
 
 
 """
-data = pd.DataFrame({"Description", description})
+data = pd.DataFrame({"Description", description, "Location", location,})
 print(pd)
+"""
 
 with open('data_write.xml', 'w') as f: # Writing in XML file
     for line in xml_data:
         f.write(line)
-        """
 start_program()
